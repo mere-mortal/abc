@@ -192,15 +192,11 @@ namespace nodetool
   #define ADD_HARDCODED_SEED_NODE(addr) append_net_address(m_seed_nodes, addr);
   //-----------------------------------------------------------------------------------
   template<class t_payload_net_handler>
-  bool node_server<t_payload_net_handler>::init(const boost::program_options::variables_map& vm, bool testnet)
+ bool node_server<t_payload_net_handler>::init(const boost::program_options::variables_map& vm)
   {
-    if (!testnet) {
-	 ADD_HARDCODED_SEED_NODE("178.62.15.125:14149");
-	 ADD_HARDCODED_SEED_NODE("178.62.15.126:14149");
-    } else {
-      m_network_id.data[0] += 1;
-    }
-
+    ADD_HARDCODED_SEED_NODE("178.62.15.125:14149");
+    ADD_HARDCODED_SEED_NODE("178.62.15.126:14149");
+    
     bool res = handle_command_line(vm);
     CHECK_AND_ASSERT_MES(res, false, "Failed to handle command line");
     m_config_folder = command_line::get_arg(vm, command_line::arg_data_dir);
