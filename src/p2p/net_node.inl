@@ -196,7 +196,7 @@ namespace nodetool
   {
     if (!testnet) {
 	 ADD_HARDCODED_SEED_NODE("178.62.15.125:14149");
-	 ADD_HARDCODED_SEED_NODE("178.62.28.45:14149");
+	 ADD_HARDCODED_SEED_NODE("178.62.15.126:14149");
     } else {
       m_network_id.data[0] += 1;
     }
