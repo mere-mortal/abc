@@ -192,7 +192,7 @@ namespace nodetool
   #define ADD_HARDCODED_SEED_NODE(addr) append_net_address(m_seed_nodes, addr);
   //-----------------------------------------------------------------------------------
   template<class t_payload_net_handler>
- bool node_server<t_payload_net_handler>::init(const boost::program_options::variables_map& vm)
+ bool node_server<t_payload_net_handler>::init(const boost::program_options::variables_map& vm, bool testnet)
   {
     ADD_HARDCODED_SEED_NODE("178.62.15.125:14149");
     ADD_HARDCODED_SEED_NODE("178.62.15.126:14149");
